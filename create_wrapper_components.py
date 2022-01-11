@@ -54,12 +54,12 @@ def get_func_source(func):
     return func_source
 
 
-def create_wrapper_components(components, install_kfp_package=True,
+def create_wrapper_components(components, base_image, install_kfp_package=True,
                               filename='tmp/components.py'):
     """Create wrapper components."""
     out = [_SCRIPT_START]
     for component in components:
-        aux = f'@component(base_image=base_image, install_kfp_package={install_kfp_package})\n'
+        aux = f'@component(base_image={base_image}, install_kfp_package={install_kfp_package})\n'
         aux += get_func_source(component)
         out += [aux]
 
