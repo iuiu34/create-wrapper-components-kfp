@@ -1,0 +1,10 @@
+syntax: glob
+*.pyc
+*.pyo
+*.pyd
+.idea
+input
+tmp
+tox
+UNKNOWN.egg-info
+
